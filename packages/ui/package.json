@@ -1,0 +1,21 @@
+{
+  "name": "@talestudio/ui",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./globals.css": "./src/globals.css",
+    "./lib/utils": "./src/lib/utils.ts",
+    "./*": "./src/components/*.tsx"
+  },
+  "scripts": { "typecheck": "tsc -p tsconfig.json" },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.2.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.70.0",
+    "tailwind-merge": "^3.3.1"
+  },
+  "peerDependencies": { "react": "^19", "react-dom": "^19" },
+  "devDependencies": { "@types/react": "^19.2.0", "@types/react-dom": "^19.2.0", "react": "^19.3.1", "react-dom": "^19.3.1" }
+}

@@ -1,0 +1,47 @@
+# Local stack: Postgres (app + Temporal), Temporal + UI, S3 (LocalStack) with the same lifecycle rules as prod.
+name: talestudio
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: talestudio
+      POSTGRES_PASSWORD: talestudio
+      POSTGRES_DB: talestudio
+    ports: ["${PG_PORT:-5432}:5432"]
+    volumes: [pg:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U talestudio"]
+      interval: 3s
+      retries: 20
+
+  temporal:
+    image: temporalio/auto-setup:1.29.1
+    depends_on:
+      postgres: { condition: service_healthy }
+    environment:
+      DB: postgres12
+      DB_PORT: 5432
+      POSTGRES_USER: talestudio
+      POSTGRES_PWD: talestudio
+      POSTGRES_SEEDS: postgres
+    ports: ["7233:7233"]
+
+  temporal-ui:
+    image: temporalio/ui:2.39.0
+    depends_on: [temporal]
+    environment:
+      TEMPORAL_ADDRESS: temporal:7233
+    ports: ["8233:8080"]
+
+  # S3-compatible storage for dev. Same bucket + lifecycle rules as prod (infra/terraform/storage.tf).
+  s3:
+    image: localstack/localstack:4.9
+    environment:
+      SERVICES: s3
+    ports: ["4566:4566"]
+    volumes:
+      - ./localstack/init-s3.sh:/etc/localstack/init/ready.d/init-s3.sh:ro
+
+volumes:
+  pg: {}

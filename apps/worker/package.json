@@ -1,0 +1,25 @@
+{
+  "name": "@talestudio/worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch --env-file-if-exists=../../.env src/worker.ts",
+    "start": "tsx --env-file-if-exists=../../.env src/worker.ts",
+    "run-local": "tsx --env-file-if-exists=../../.env src/run-local.ts",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@talestudio/core": "workspace:*",
+    "@talestudio/pipeline": "workspace:*",
+    "@temporalio/activity": "^1.25.0",
+    "@temporalio/client": "^1.25.0",
+    "@temporalio/worker": "^1.25.0",
+    "@temporalio/workflow": "^1.25.0",
+    "@talestudio/blocks": "workspace:*",
+    "@talestudio/db": "workspace:*"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.6"
+  }
+}

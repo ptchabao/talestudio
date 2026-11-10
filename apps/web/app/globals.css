@@ -1,0 +1,8 @@
+@import "@talestudio/ui/globals.css";
+@source "../../../packages/ui/src";
+
+@keyframes ts-ken-burns {
+  from { transform: scale(1) translate(0, 0); }
+  to { transform: scale(1.08) translate(-1%, -1%); }
+}
+.animate-ken-burns { animation: ts-ken-burns 5s ease-out both; }

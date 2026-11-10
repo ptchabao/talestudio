@@ -1,0 +1,30 @@
+/**
+ * TaleStudio brand assets, drawn from the official logo (Talestudio_logo/*.svg).
+ * Shared by the site (currentColor follows the theme), icons and share images (explicit colours).
+ */
+
+/** "TALE [STUDIO]" wordmark. viewBox 1062 × 167 (ratio ≈ 6.36). */
+export function Wordmark({ color = "currentColor", height = 20, title = "TaleStudio" }: { color?: string; height?: number; title?: string }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1062 167" height={height} width={Math.round((height * 1062) / 167)} role="img" aria-label={title}>
+      <g fill={color}>
+        <path d="M106.00,2.00L80.00,2.00L3.00,2.00L3.00,28.00L80.00,28.00L80.00,164.00L106.00,164.00L106.00,28.00L183.00,28.00L183.00,2.00ZM309.00,32.00L359.00,164.00L391.00,164.00L327.00,2.00L291.00,2.00L227.00,164.00L259.00,164.00ZM435.00,138.00L435.00,164.00L461.00,164.00L557.00,164.00L557.00,138.00L461.00,138.00L461.00,2.00L435.00,2.00ZM601.00,2.00L601.00,28.00L601.00,70.00L601.00,96.00L601.00,138.00L601.00,164.00L627.00,164.00L729.00,164.00L729.00,138.00L627.00,138.00L627.00,96.00L719.00,96.00L719.00,70.00L627.00,70.00L627.00,28.00L729.00,28.00L729.00,2.00L627.00,2.00Z" />
+        <path transform="translate(803.00,54.5) scale(0.01953,-0.01953)" d="M665 -25C1015 -25 1217 159 1217 412C1217 681 978 783 788 832L643 870C529 900 375 953 375 1094C375 1220 489 1312 670 1312C839 1312 960 1234 975 1098H1197C1190 1335 981 1510 675 1510C375 1510 147 1339 147 1081C147 877 291 752 535 687L709 639C869 596 992 545 992 415C992 271 853 175 664 175C492 175 348 251 335 414H106C120 142 330 -25 665 -25Z" />
+        <path transform="translate(842.84,54.5) scale(0.01953,-0.01953)" d="M90 1294H555V0H784V1294H1247V1490H90Z" />
+        <path transform="translate(882.95,54.5) scale(0.01953,-0.01953)" d="M759 -23C1115 -23 1351 199 1351 512V1490H1122V531C1122 330 983 184 759 184C534 184 393 330 393 531V1490H165V512C165 199 400 -23 759 -23Z" />
+        <path transform="translate(926.56,54.5) scale(0.01953,-0.01953)" d="M650 0C1103 0 1366 281 1366 747C1366 1210 1103 1490 664 1490H165V0ZM393 200V1290H649C974 1290 1142 1097 1142 747C1142 394 974 200 637 200Z" />
+        <path transform="translate(969.43,54.5) scale(0.01953,-0.01953)" d="M393 1490H165V0H393Z" />
+        <path transform="translate(994.33,54.5) scale(0.01953,-0.01953)" d="M786 -20C1172 -20 1457 268 1457 744C1457 1222 1172 1510 786 1510C399 1510 113 1222 113 744C113 268 399 -20 786 -20ZM786 188C530 188 339 384 339 744C339 1105 530 1302 786 1302C1040 1302 1231 1106 1231 744C1231 384 1040 188 786 188Z" />
+        <rect x="769" y="4" width="289.99" height="72" rx="12" fill="none" stroke={color} strokeWidth={3} />
+      </g>
+    </svg>
+  );
+}
+
+/** The "T" of the wordmark, for square marks (favicon, home-screen icon). Bounding box 3–183 × 2–164. */
+export const MONOGRAM_PATH = "M106.00,2.00L80.00,2.00L3.00,2.00L3.00,28.00L80.00,28.00L80.00,164.00L106.00,164.00L106.00,28.00L183.00,28.00L183.00,2.00Z";
+
+/** Brand ink from the logo files. */
+export const BRAND_INK = "#2b2b2b";
+/** The site's single accent colour, used for the logo. */
+export const EMBER = "#ff5900";

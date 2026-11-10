@@ -1,0 +1,1 @@
+ALTER TABLE "series_character" ADD COLUMN "bio" text;
